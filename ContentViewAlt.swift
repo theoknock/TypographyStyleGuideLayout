@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct ContentViewAlt: View {
     @State private var selectedFontName: String = "Times New Roman"
     @State private var isPresented: Bool = true
     
@@ -16,7 +16,7 @@ struct ContentView: View {
                         Label("One", systemImage: "1.circle")
                     }
                 
-                FontWeightsPageView(selectedFontName: $selectedFontName)
+                FontWeightsPageView_Alt(selectedFontName: $selectedFontName)
                     .tabItem {
                         Label("Two", systemImage: "2.circle")
                     }
@@ -26,7 +26,7 @@ struct ContentView: View {
                         Label("Three", systemImage: "3.circle")
                     }
                 
-                FontCharactersView_Alt(selectedFontName: $selectedFontName)
+                FontCharactersView_Alt2(selectedFontName: $selectedFontName)
                     .tabItem {
                         Label("Four", systemImage: "4.circle")
                     }
@@ -64,7 +64,7 @@ struct ContentView: View {
 //
 
 #if os(iOS)
-public struct P73_DynamicTypeSize: View {
+public struct P73Alt_DynamicTypeSize: View {
     
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
     @State private var currentTypeSize: DynamicTypeSize = .xSmall
@@ -173,7 +173,7 @@ public struct P73_DynamicTypeSize: View {
 }
 #endif
 
-struct FontSizesView: View {
+struct FontSizesView_Alt: View {
     @Binding var selectedFontName: String
     
     var body: some View {
@@ -221,7 +221,7 @@ struct FontSizesView: View {
     }
 }
 
-struct FontWeightsPageView: View {
+struct FontWeightsPageView_Alt: View {
     @Binding var selectedFontName: String
     @State private var currentPage = 0
     
@@ -244,7 +244,7 @@ struct FontWeightsPageView: View {
     }
 }
 
-struct FontFamiliesView_Alt: View {
+struct FontFamiliesView: View {
     @Binding var selectedFontName: String
     
     var body: some View {
@@ -267,7 +267,7 @@ struct FontFamiliesView_Alt: View {
     }
 }
 
-struct FontCharactersView_Alt2: View {
+struct FontCharactersView_Alt: View {
     @Binding var selectedFontName: String
     @State private var selectedCharacter: Character? = nil
     
@@ -313,7 +313,7 @@ struct FontCharactersView_Alt2: View {
     }
 }
 
-struct TextStylePairingView_Alt: View {
+struct TextStylePairingView: View {
     @Binding var selectedFontName: String
     
     var body: some View {
@@ -361,7 +361,7 @@ struct TextStylePairingView_Alt: View {
     }
 }
 
-struct FontSelectorView: View {
+struct FontSelectorView_Alt: View {
     @Binding var selectedFontName: String
     
     private let familyNames: [String] = {
@@ -386,8 +386,8 @@ struct FontSelectorView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentViewAlt_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentViewAlt()
     }
 }
